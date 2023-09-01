@@ -1,0 +1,114 @@
+@use "sass:color";
+
+// * margin ---
+
+$base-margin: 1em;
+$margin-medium: $base-margin * 4;
+$margin-extra: $base-margin * 8;
+$center-horizontal: 0 auto;
+
+//* paddiing ---
+
+$base-padding: 1em;
+$padding-medium: $base-padding * 4;
+$padding-extra: $base-padding * 8;
+
+//* colors -----
+
+$bg-primary: #1d1d1d;
+$bg-primary-light: color.scale($bg-primary, $lightness: 12%, $alpha: -30%);
+$bg-primary-light-2: color.scale($bg-primary, $alpha: -20%);
+$cl-yellow-light: lighten(yellow, 23%);
+$cl-grey-dark: darken(grey, 10%);
+$cl-blue-dark: darken(blue, 45.7%);
+$cl-blue-violet-dark: darken(#8849c4, 39.6%);
+$cl-indigo-dark: #4e1a3d;
+$cl-dark-orange: #da9109;
+$cl-light-red: #d61f1f;
+$cl-light-black: lighten(
+    $color: black,
+    $amount: 54%,
+);
+$cl-light-black-2: lighten(
+    $color: black,
+    $amount: 15%,
+);
+$cl-light-black-3: lighten(
+    $color: black,
+    $amount: 20%,
+);
+$cl-light-cyan: lighten(
+    $color: #127570,
+    $amount: 20%,
+);
+//* height ----
+$base-height: 1em;
+$height-md: 4em;
+$height-large: 8em;
+$height-extra: 190px;
+
+//* width ----
+$base-width: 1em;
+$width-md: 4em;
+$width-large: 8em;
+$width-extra: 14em;
+
+//* font-size -------
+
+$res-fontSize-lg: clamp(5vw, 6.7vw, 12em);
+$res-fontSize-sm: clamp(1.7vw, 2.6vw, 3rem);
+$fontSize-base: 1em;
+$fontSize-md: 2em;
+$fontSize-lg: 4em;
+$fontSize-xl: 6em;
+
+//* fonts ----
+
+$open-sans: "Open Sans", sans-serif;
+$fira-sans: "Fira Sans", sans-serif;
+$Montserrat: "Montserrat", sans-serif;
+$luckiest-guy: "Luckiest Guy", cursive;
+$bebas-neue: "Bebas Neue", cursive;
+$amatic-sc: "Amatic SC", cursive;
+$roboto: "Roboto", sans-serif;
+$archivo: "Archivo", sans-serif;
+
+//* default button style ---
+
+@mixin default-btn-style(
+    $background-color: transparent,
+    $font-size: $fontSize-base,
+    $font-color: white,
+    $padding: $base-padding / 1.7 $base-padding * 2,
+    $border-radius: none,
+    $width: 5em,
+    $height: 1.4rem,
+    $text-align: center
+) {
+    all: unset;
+    background-color: $background-color;
+    font-size: $font-size;
+    color: $font-color;
+    padding: $padding;
+    border-radius: $border-radius;
+    cursor: pointer;
+    min-width: $width;
+    min-height: $height;
+    text-align: $text-align;
+}
+
+@mixin ion-icon-style(
+    $color: white,
+    $cursor: pointer,
+    $font-Size: 1.5em,
+    $translate: 0
+) {
+    color: $color;
+    cursor: $cursor;
+    font-size: $font-Size;
+    translate: $translate;
+}
+
+@mixin responsive-font-size($min: 3rem, $preferred: 7vw, $max: 16em) {
+    font-size: clamp($min, $preferred, $max);
+}

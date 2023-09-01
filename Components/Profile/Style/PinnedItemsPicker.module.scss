@@ -1,0 +1,137 @@
+@use "/Style/GlobalStyle/main" as m;
+
+.background {
+    // height: 44em;
+    height: 100%;
+    // width: 44rem;
+    width: 100%;
+    background: m.$bg-primary-light-2;
+    position: fixed;
+    z-index: 444;
+    top: 0;
+    .items-container {
+        width: m.$width-extra * 1.8;
+        height: m.$height-extra * 2.6;
+        border: 2px solid m.$cl-light-black;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        background: m.$bg-primary;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        .header-container {
+            border-bottom: 4px solid m.$cl-light-black-3;
+
+            display: flex;
+            padding: m.$base-padding / 1.3 0;
+            align-items: center;
+            h5 {
+                flex: 1 0 auto;
+                color: white;
+                padding-left: m.$base-padding;
+            }
+            ion-icon {
+                color: white;
+
+                font-size: m.$fontSize-md;
+                margin-right: m.$base-margin / 2.4;
+                cursor: pointer;
+            }
+        }
+        form {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+            ul {
+                flex: 1 0 auto;
+                height: m.$height-extra * 1.7;
+                overflow: auto;
+                border-bottom: 4px solid m.$cl-light-black-3;
+                li {
+                    height: m.$base-height * 3;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: m.$cl-light-black-3;
+                    }
+                    input[type="checkbox"] {
+                        margin: 0 m.$base-margin / 1.2;
+                        -webkit-appearance: none;
+                        background-color: #fafafa;
+
+                        padding: 7.5px;
+                        border-radius: 3px;
+                        display: inline-block;
+                        position: relative;
+                        &:checked {
+                            background-color: m.$cl-dark-orange;
+
+                            &:after {
+                                content: "\2714";
+                                font-size: 16px;
+                                position: absolute;
+                                top: -2.5px;
+                                left: 1px;
+                                color: white;
+                            }
+                        }
+                    }
+                    label {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        height: 100%;
+                        width: 100%;
+
+                        padding: m.$base-padding / 1.2 m.$base-padding / 4;
+                        cursor: pointer;
+                        strong {
+                            color: white;
+                        }
+                    }
+                }
+                .loading-text {
+                    color: white;
+                    text-align: center;
+                    padding: m.$base-padding;
+                }
+            }
+            .submit-btn-container {
+                padding: m.$base-padding / 1.2 0;
+                display: flex;
+                align-items: center;
+                // gap: 18%;
+                justify-content: space-between;
+                .response-text {
+                    font-weight: lighter;
+                    font-size: m.$fontSize-base / 1.2;
+                    margin-left: m.$base-margin / 1.4;
+                }
+                button {
+                    @include m.default-btn-style(
+                        $background-color: m.$cl-dark-orange,
+                        $border-radius: 0.34rem
+                    );
+                    margin-right: m.$base-margin / 1.2;
+                    // margin-left: m.$margin-extra * 2;
+                    &:not(:disabled) :hover {
+                        background-color: lighten(
+                            $color: m.$cl-dark-orange,
+                            $amount: 10%
+                        );
+                    }
+
+                    &:disabled {
+                        //* revert to browser default
+                        background-color: revert;
+
+                        cursor: auto;
+                    }
+                }
+            }
+        }
+    }
+}

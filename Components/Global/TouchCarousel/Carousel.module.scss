@@ -1,0 +1,14 @@
+.swiper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  .swiper-slide {
+    height: auto !important;
+    user-select: none;
+    flex: 0 0 11em;
+    .cards {
+      display: block;
+    }
+  }
+}

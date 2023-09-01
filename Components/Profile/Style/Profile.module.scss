@@ -1,0 +1,108 @@
+@use "/Style/GlobalStyle/main" as m;
+
+.container-profile {
+    padding-bottom: m.$padding-medium * 3;
+    .inner-profile-container {
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        gap: 2em;
+        @include m.breakpoint(565px) {
+            width: 94%;
+        }
+        margin-bottom: 3em;
+        .personal-info-container {
+            margin-top: m.$margin-medium * 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.3rem;
+
+            .profile-img-container {
+                width: 10em;
+                height: 10em;
+                border: 3px solid lightblue;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                }
+            }
+            .name {
+                color: white;
+                font-size: 2.1em;
+            }
+            .follow-container {
+                color: white;
+                display: flex;
+                gap: 3em;
+                .follow {
+                    font-size: 1em;
+                    font-weight: lighter;
+                }
+            }
+            .follow-btn {
+                margin-top: 1em;
+                border: none;
+                outline: none;
+                padding: 0.56em 2.4em;
+                font-size: 0.96em;
+                border-radius: 0.32em;
+                background-color: #76aee3;
+                color: white;
+                cursor: pointer;
+                &:hover {
+                    background-color: #86b8e7;
+                }
+                &[data-following="true"] {
+                    background-color: transparent;
+                    border: 3px solid #76aee3;
+                }
+            }
+        }
+        .picks-container {
+            width: 100%;
+            margin-top: 2em;
+
+            position: relative;
+            h4 {
+                color: white;
+                font-size: 1.8em;
+
+                margin-bottom: m.$base-margin;
+                border-bottom: 4px solid #4242d4;
+            }
+            .add-picks-btn {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                outline: none;
+                border: none;
+                background: transparent;
+                color: m.$cl-light-black;
+                cursor: pointer;
+                &:hover {
+                    color: yellow;
+                }
+            }
+            .picks-container-inner {
+                padding: m.$base-padding 0;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 2.3vw;
+                p {
+                    font-size: 1.1em;
+                }
+            }
+        }
+        .activity-header-text {
+            color: white;
+
+            font-family: "Archivo", sans-serif;
+            letter-spacing: 0.1em;
+            font-size: m.$fontSize-md;
+        }
+    }
+}

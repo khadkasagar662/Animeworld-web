@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+/*  //* large screen navbar ------- */
+
+/*  //* ---- mobile navbar ------------------- */
+
+/* .nav-container ul li:nth-child(2) {
+  transform: translateX(-20px);
+}
+.nav-container ul li:nth-child(2) a span {
+  left: 80px;
+}
+.nav-container ul li:hover a span {
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+.nav-container ul li:nth-child(n):hover {
+  font-size: 1.1em;
+}
+
+.yourlist button:nth-child(n):hover {
+  color: orange;
+} */

@@ -1,0 +1,95 @@
+@use "/Style/GlobalStyle/main" as m;
+
+.mobile-navbar {
+    background-color: m.$cl-light-black-2;
+    height: 100vh;
+    height: 100dvh;
+    // border: 2px solid red;
+    position: fixed;
+    z-index: 22;
+    width: 45%;
+
+    transition: right 400ms ease-out;
+    .close-btn {
+        all: unset;
+        right: 2.2em;
+        top: 1em;
+        position: absolute;
+        ion-icon {
+            color: white;
+
+            font-size: m.$fontSize-md + 0.5;
+        }
+        &:focus-visible {
+            outline: 2px solid m.$cl-dark-orange;
+        }
+    }
+
+    header {
+        margin-bottom: m.$base-margin + 1.2;
+        margin-top: m.$margin-extra;
+        .profile-img {
+            margin: 0 auto;
+            margin-bottom: m.$base-margin;
+            border: 2px solid m.$cl-dark-orange;
+            width: m.$base-width + 3;
+            height: m.$base-height + 3;
+            img {
+                width: 100%;
+            }
+        }
+        .user-name {
+            color: m.$cl-light-cyan;
+            display: block;
+            text-align: center;
+            font-size: m.$fontSize-base + 0.4;
+        }
+    }
+    .nav-links {
+        margin-top: m.$margin-extra * 1.5;
+        a {
+            @include m.responsive-font-size(3vw, 3.9vw, 2.2rem);
+            display: block;
+            color: white;
+            text-decoration: none;
+            list-style-type: none;
+            margin-bottom: m.$base-margin + 1;
+            letter-spacing: 0.14rem;
+            text-align: start;
+
+            border-bottom: 3px solid m.$cl-light-black-3;
+            padding: m.$base-padding - 0.3 0;
+            padding-left: m.$base-padding;
+        }
+        .sign-in {
+            background-color: m.$cl-dark-orange;
+            border-radius: 0.33rem;
+        }
+    }
+
+    // * if the header exists then remove margin-top from the nav-links
+    &:has(header) {
+        .nav-links {
+            margin-top: 0;
+        }
+    }
+
+    .sign-out {
+        @include m.default-btn-style(
+            m.$cl-light-red,
+            $border-radius: 0.34rem,
+            $padding: m.$base-padding - 0.5 m.$base-padding + 0.4
+        );
+        display: block;
+        margin: 0 auto;
+
+        ion-icon {
+            font-size: m.$fontSize-base + 0.23;
+            vertical-align: middle;
+            margin-left: m.$base-margin - 0.7;
+        }
+        &:focus-visible {
+            outline: 2px solid m.$cl-dark-orange;
+        }
+    }
+}

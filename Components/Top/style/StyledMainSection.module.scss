@@ -1,0 +1,24 @@
+@use "/Style/GlobalStyle/main" as m;
+
+.section-wrapper {
+  width: 81%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+
+  h2 {
+    font-size: m.$res-fontSize-lg;
+    translate: 0 -60%;
+    padding: 0 0.02em;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+
+    h4 {
+      font-size: m.$res-fontSize-sm;
+      margin-top: 2rem;
+      text-transform: none !important;
+
+      padding-left: 0.7rem;
+    }
+  }
+}

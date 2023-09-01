@@ -1,0 +1,47 @@
+@use "/Style/GlobalStyle/main" as m;
+
+.home-section-1 {
+    // margin-bottom: 17%;
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    z-index: 2;
+    padding-top: m.$base-padding;
+    margin-bottom: m.$margin-extra * 1.8;
+    .main-text-container {
+        color: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 2.5rem;
+        .random-header {
+            color: #ffffff;
+            text-transform: capitalize;
+            font-size: clamp(6em, 15vw, 18em);
+
+            line-height: 0.76em;
+            letter-spacing: 0.03em;
+            background-clip: text;
+            background-size: 160%;
+            display: flex;
+            & .letter {
+                font-family: "Fira Sans", sans-serif !important;
+            }
+        }
+    }
+    .para-container {
+        overflow: hidden;
+
+        .random-para {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.1rem;
+            line-height: 0.81em;
+            color: #ffffff6f;
+            line-height: 1.5em;
+            padding-inline: 3em;
+            margin-top: 2em;
+        }
+    }
+}
